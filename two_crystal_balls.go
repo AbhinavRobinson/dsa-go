@@ -3,6 +3,9 @@ package DSA_Go
 import "math"
 
 func TwoCrystalBalls(array []bool) int {
+	if array[0] {
+		return -1
+	}
 	jmp := int(math.Sqrt(float64(len(array))))
 	ptr := 0
 	for i := 0; i < len(array); i += jmp {
@@ -17,8 +20,5 @@ func TwoCrystalBalls(array []bool) int {
 			break
 		}
 	}
-	if ptr > 0 {
-		return ptr
-	}
-	return -1
+	return ptr
 }
